@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<persistencia>
+  <tiempos>
+    <entry>
+      <key>IV-V EnhancedParallelBlock</key>
+      <value>985885196600</value>
+    </entry>
+    <entry>
+      <key>III-V EnhancedParallelBlock</key>
+      <value>1166178967700</value>
+    </entry>
+    <entry>
+      <key>NaivLoopUnrollingFour</key>
+      <value>173145211700</value>
+    </entry>
+    <entry>
+      <key>NaivLoopUnrollinTwo</key>
+      <value>187588482900</value>
+    </entry>
+    <entry>
+      <key>NaivOnArray</key>
+      <value>248449555100</value>
+    </entry>
+    <entry>
+      <key>ParallelBlockCincoCuatro</key>
+      <value>137695419400</value>
+    </entry>
+    <entry>
+      <key>ParallelBlockCuatroCuatro</key>
+      <value>133242988800</value>
+    </entry>
+    <entry>
+      <key>ParallelBlockTresCuatro</key>
+      <value>134964104400</value>
+    </entry>
+    <entry>
+      <key>SequentialBlockCincoTres</key>
+      <value>133552693400</value>
+    </entry>
+    <entry>
+      <key>SequentialBlockCuatroTres</key>
+      <value>125271413100</value>
+    </entry>
+    <entry>
+      <key>SequentialBlockTresTres</key>
+      <value>184073424900</value>
+    </entry>
+    <entry>
+      <key>StrassenNaiv</key>
+      <value>87653960300</value>
+    </entry>
+    <entry>
+      <key>StrassenWinograd</key>
+      <value>92127232100</value>
+    </entry>
+    <entry>
+      <key>WinogradOriginal</key>
+      <value>178959999300</value>
+    </entry>
+    <entry>
+      <key>WinogradScaled</key>
+      <value>188255390100</value>
+    </entry>
+  </tiempos>
+</persistencia>
