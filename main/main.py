@@ -12,7 +12,7 @@ from Persistencia import Persistencia
 # Agregar la ruta del paquete Algoritmos al PYTHONPATH
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../Algoritmos')))
 
-# Importar las funciones desde EnhaEnhancedParallelBlockCuatroCincon.py
+# Importar cada uno de los algoritmos
 from EnhancedParallelBlockCuatroCinco import parallel_block_matrix_multiply, imprimir_matriz # type: ignore
 from EnhancedParallelBlockTresCinco import parallel_block_matrix_multiply2, imprimir_matriz # type: ignore
 from NaivLoopUnrollingFour import naivLoopUnrollingFour, imprimirMatriz # type: ignore
@@ -31,20 +31,26 @@ from WinogradScaled import winogradScaled # type: ignore
 
 
 def main():
-    m1 = Persistencia.fromXML("Matrices de prueba/Caso 7/matriz 1.xml").getMatriz()
-    m2 = Persistencia.fromXML("Matrices de prueba/Caso 7/matriz 2.xml").getMatriz()
-    m1l = len(m1)
-    m2l = len(m2)
-    p = len(m2[0])
+    #Matrices a utlizar en cada uno de los algoritmos
+    m1 = Persistencia.fromXML("Matrices de prueba/Caso 1/matriz 1.xml").getMatriz()
+    m2 = Persistencia.fromXML("Matrices de prueba/Caso 1/matriz 2.xml").getMatriz()
+    m1l = len(m1) # Número de filas de la primera matriz
+    m2l = len(m2) # Número de filas de la segunda matriz
+    p = len(m2[0]) # Número de columnas de la segunda matriz
+    # Inicializar matrices de resultado con las dimensiones apropiadas
     m3 = [[0] * p for _ in range(m1l)]
     m4 = [[0 for _ in range(m2l)] for _ in range(m1l)]
     m5 = [[0.0] * m2l for _ in range(m1l)]
 
 
     # punto 1
+    #tomar el tiempo antes de iniciar el algoritmo
     start_time_nano = time.time_ns()
+    #llamado al algoritmo 1
     resultado = parallel_block_matrix_multiply(m3, m1, m2, m1l, 1)
+    #se finaliza el tiempo cuando ya termino el algoritmo
     end_time_nano = time.time_ns()
+    # se calcula el tiempo que tardo el algoritmo
     elapsed_time_nano = end_time_nano - start_time_nano
     #imprimir_matriz(resultado)
 
@@ -294,7 +300,7 @@ def main():
     tree = ET.ElementTree(root)
 
     # Guardar el árbol XML en un archivo
-    ruta = "Tiempos de ejecucion python/Tiempos-Caso 7.xml"
+    ruta = "Tiempos de ejecucion python/Tiempos-Caso 1.xml"
     with open(ruta, "wb") as f:
         tree.write(f, pretty_print=True, xml_declaration=True, encoding="utf-8")
 
